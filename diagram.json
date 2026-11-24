@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "author": "Venice",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "board-ssd1306",
+      "id": "oled",
+      "top": -64.06,
+      "left": 326.63,
+      "attrs": { "i2cAddress": "0x3c" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnUp",
+      "top": -51.4,
+      "left": 220.8,
+      "attrs": { "color": "green", "label": "UP", "bounce": "0" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnDown",
+      "top": 25.4,
+      "left": 230.4,
+      "attrs": { "color": "green", "label": "DOWN", "bounce": "0" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnEnter",
+      "top": 102.2,
+      "left": 230.4,
+      "attrs": { "color": "blue", "label": "ENTER", "bounce": "0" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnBack",
+      "top": 180,
+      "left": 210,
+      "attrs": { "color": "red", "label": "BACK", "bounce": "0" }
+    }
+  ],
+  "connections": [
+    [ "esp:3V3", "oled:VCC", "red", [] ],
+    [ "esp:GND.1", "oled:GND", "black", [] ],
+    [ "esp:21", "oled:SDA", "green", [] ],
+    [ "esp:22", "oled:SCL", "blue", [] ],
+    [ "esp:32", "btnUp:1.l", "green", [] ],
+    [ "esp:GND.1", "btnUp:2.r", "black", [] ],
+    [ "esp:33", "btnDown:1.l", "green", [] ],
+    [ "esp:GND.1", "btnDown:2.r", "black", [] ],
+    [ "esp:25", "btnEnter:1.l", "blue", [] ],
+    [ "esp:GND.1", "btnEnter:2.r", "black", [] ],
+    [ "esp:26", "btnBack:1.l", "red", [] ],
+    [ "esp:GND.1", "btnBack:2.r", "black", [] ]
+  ],
+  "dependencies": {}
+}
